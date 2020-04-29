@@ -14,7 +14,7 @@ type ConcurrentHelper struct {
 	WaitGroup *sync.WaitGroup
 }
 
-func NewConcurrentHelper() ConcurrentInterface{
+func NewConcurrentHelper() *ConcurrentHelper{
 	var wg sync.WaitGroup
 	return &ConcurrentHelper{WaitGroup: &wg}
 }

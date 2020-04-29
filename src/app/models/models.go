@@ -7,12 +7,12 @@ const (
 
 // Bollard = Amarra
 type Bollard struct {
-	Type string `json:"type"`
+	Size string `json:"type"`
 	Free bool `json:"free"`
 }
 
 // Boats = Barcos
-type Boats struct {
-	Type string `json:"type"`
+type Boat struct {
+	Size string `json:"type"`
 	Name string `json:"name"`
 }

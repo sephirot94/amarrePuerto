@@ -11,7 +11,7 @@ type Port struct {
 	Map map[int]*models.Bollard
 }
 
-func CreatePort() PortInterface{
+func CreatePort() *Port{
 
 	m := make(map[int]*models.Bollard)
 	// Create Big Bollard
@@ -34,7 +34,7 @@ func CreatePort() PortInterface{
 
 func NewBollard(t string, n int) *models.Bollard {
 	return &models.Bollard{
-		Type:   t,
+		Size:   t,
 		Free: true,
 	}
 }
