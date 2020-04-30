@@ -26,6 +26,8 @@ func NewBoat(id int) *models.Boat{
 		size = models.Big
 		name = "Big ship #" + sId
 	}
+
+	fmt.Printf("Boat named ' %s ' was created. It is a %s boat", name, size)
 	return &models.Boat{
 		Size: size,
 		Name: name,
@@ -40,7 +42,7 @@ func BoatLeaves(boat *models.Boat) {
 	fmt.Printf("Boat named ' %s ' is leaving port", boat.Name)
 }
 
-func BoatEnters(boat *models.Boat) {
-	fmt.Printf("Boat named ' %s ' has entered port and anchored", boat.Name)
+func BoatEnters(boat *models.Boat, id int) {
+	fmt.Printf("Boat named ' %s ' has entered port and anchored at bollard %d", boat.Name, id)
 }
 

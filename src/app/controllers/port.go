@@ -4,7 +4,9 @@ import "facultad/sistemasConcurrentes/amarrePuerto/src/app/models"
 
 type PortInterface interface {
 	CheckBollard(id int) bool
-
+	UseBollard(id int)
+	FreeBollard(id int)
+	GetAvailableBollard(boat *models.Boat) *models.Bollard
 }
 
 type Port struct {
@@ -51,5 +53,21 @@ func (p Port) FreeBollard(id int) {
 	p.Map[id].Free = true
 }
 
+func (p Port) GetAvailableBollard(boat *models.Boat) (*models.Bollard, id int) {
+	if boat.Size == models.Big {
+		for i:=1;i<=4;i++ {
+			if p.CheckBollard(i) {
+				return p.Map[i], i
+			}
+		}
+	} else  {
+		for i:=5;i<=10;i++ {
+			if p.CheckBollard(i) {
+				return p.Map[i], i
+			}
+		}
+	}
+	return nil, 0
+}
 
 
