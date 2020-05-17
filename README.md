@@ -4,7 +4,7 @@
 
 ### Estructura de directorios:
 
-####/src/app contiene el codigo del programa. El mismo esta separado por:
+#### /src/app contiene el codigo del programa. El mismo esta separado por:
 
 * ##### main.go : la ejecucion del programa empieza aqui.
 
@@ -16,7 +16,7 @@
 
 * ##### models: define los modelos de datos que el sistema necesita.
 
-####/pkg contiene los binarios compilados separados por versiones. La ultima version en la carpeta es la actual.
+#### /pkg contiene los binarios compilados separados por versiones. La ultima version en la carpeta es la actual.
 
 ### Autores:
 
