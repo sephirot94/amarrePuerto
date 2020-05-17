@@ -6,13 +6,14 @@ import (
 )
 
 type ConcurrentInterface interface {
-	Add()
-	Wait()
-	Done()
+
 }
 
 type ConcurrentHelper struct {
-	WaitGroup *sync.WaitGroup
+	// WaitGroup = Semaphore in Golang
+	SmallWaitGroup *sync.WaitGroup
+	BigWaitGroup *sync.WaitGroup
+	// Channels are used by goroutines to communicate
 	BoatChannel chan *models.Boat
 	BollardChannel chan *models.Bollard
 	ErrorChannel chan error
@@ -20,25 +21,15 @@ type ConcurrentHelper struct {
 
 func NewConcurrentHelper() *ConcurrentHelper{
 	errChan := make(chan error)
-	boatChan := make(chan *models.Boat)
-	bollardChan := make(chan *models.Bollard)
-	var wg sync.WaitGroup
+	boatChan := make(chan *models.Boat, 10)
+	bollardChan := make(chan *models.Bollard, 10)
+	var bwg sync.WaitGroup
+	var swg sync.WaitGroup
 	return &ConcurrentHelper{
-		WaitGroup: &wg,
+		SmallWaitGroup: &swg,
+		BigWaitGroup: &bwg,
 		BoatChannel:boatChan,
 		BollardChannel: bollardChan,
 		ErrorChannel: errChan,
 	}
-}
-
-func (h ConcurrentHelper) Add() {
-	h.WaitGroup.Add(1)
-}
-
-func (h ConcurrentHelper) Wait() {
-	h.WaitGroup.Wait()
-}
-
-func (h ConcurrentHelper) Done() {
-	h.WaitGroup.Done()
 }

@@ -8,20 +8,17 @@ import (
 )
 
 func main() {
-	fmt.Println("hello")
 
 	// Build Program
 	app := application.Build()
-
+	fmt.Println("Port system activating")
 	// Execute Program
-	application.Execute(app)
-
-	//if err != nil {
-	//	fmt.Printf("Unexpected error: %s", err.Error())
-	//}
+	go func(*application.Application){
+		application.Execute(app)
+	}(app)
 
 	// Following code will close program after a minute
-	time.Sleep(1 * time.Minute)
-	fmt.Println("That was enough for today! We are gonna stop working or else this computer might crash. Thank you for watching us work")
+	time.Sleep(60 * time.Second)
+	fmt.Println("That was enough for today! We are gonna stop working or else this computer might crash. Thank you for watching")
 	os.Exit(0)
 }
