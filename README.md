@@ -2,7 +2,7 @@
 ## Trabajo Practico Final para Materia Sistemas Concurrentes de la Universidad de Belgrano
 
 ### Para instalar el compilador de go en caso de querer modificar el codigo y compilar, siga los pasos de este tutorial
-* #### Instalar compilador Golang (https://www.tutorialesprogramacionya.com/goya/detalleconcepto.php?punto=1&codigo=1&inicio=0)
+* #### [Instalar compilador Golang](https://www.tutorialesprogramacionya.com/goya/detalleconcepto.php?punto=1&codigo=1&inicio=0)
 
 ### Luego, una vez instalado el compilador, ejecute las siguientes lineas de codigo:
 
