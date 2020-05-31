@@ -8,17 +8,11 @@
 
 * #### Para compilar (esta operacion gener aun archivo binario ejecutable):
 
-** 
-  go build /src/api/main.go
-**
+**   go build /src/api/main.go
 
 * #### Para ejecutar:
 
-
-** 
-  go run /src/api/main.go
-**
-
+** go run /src/api/main.go
 
 ### Estructura de directorios:
 
