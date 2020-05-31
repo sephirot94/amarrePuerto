@@ -1,6 +1,24 @@
 # Sistema controlador de Amarres de un Puerto
 ## Trabajo Practico Final para Materia Sistemas Concurrentes de la Universidad de Belgrano
 
+### Para instalar el compilador de go en caso de querer modificar el codigo y compilar, siga los pasos de este tutorial
+* #### https://www.tutorialesprogramacionya.com/goya/detalleconcepto.php?punto=1&codigo=1&inicio=0
+
+### Luego, una vez instalado el compilador, ejecute las siguientes lineas de codigo:
+
+* #### Para compilar (esta operacion gener aun archivo binario ejecutable):
+
+** 
+  go build /src/api/main.go
+**
+
+* #### Para ejecutar:
+
+
+** 
+  go run /src/api/main.go
+**
+
 
 ### Estructura de directorios:
 
